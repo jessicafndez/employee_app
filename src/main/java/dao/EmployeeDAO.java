@@ -22,7 +22,6 @@ public class EmployeeDAO {
 		this.session = session;
 	}
 	
-	
 	//	Current employees list from DB
 	public List<Employee> listEmployees() {
 		List<Employee> listEmployees = new ArrayList<Employee>();
@@ -31,9 +30,6 @@ public class EmployeeDAO {
 			List employees = session.createQuery("FROM Employee").list(); 
 			for (Iterator iterator = employees.iterator(); iterator.hasNext();){
 		        Employee employee = (Employee) iterator.next(); 
-		       // System.out.print("First Name: " + employee.getFirst_name()); 
-		      //  System.out.print("  Last Name: " + employee.getLast_name()); 
-		      //  System.out.println("");
 		        listEmployees.add(employee);
 		     }
 		}
@@ -45,7 +41,7 @@ public class EmployeeDAO {
 	}
 	
 	//	Get employee By Id
-	public Employee getEmployeeById(int emp_no) {
+	public Employee getEmployee(int emp_no) {
 		Employee employee = new Employee();
 		
 		try {
